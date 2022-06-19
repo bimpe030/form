@@ -4,7 +4,7 @@ const lastname = document.getElementById('lastname');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 
-form.addEventListener('button', e => {
+form.addEventListener('claim your free trial', e => {
 	e.preventDefault();
 	
 	checkInputs();
