@@ -1,120 +1,85 @@
-$('#submitButton').click( function () {
-  var FirstHello = '';
-  
+const form = document.getElementById('form');
+const username = document.getElementById('username');
+const lastname = document.getElementById('lastname');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
 
-if($('#first').val() == ""){
-  FirstHello = "First Name cannot be empty";
-  $('#firstMissing').html(FirstHello);
-}
-
+form.addEventListener('button', e => {
+	e.preventDefault();
+	
+	checkInputs();
 });
 
+function checkInputs() {
+	// trim to remove the whitespaces
+	const usernameValue = username.value.trim();
+	const lastnameValue = lastname.value.trim();
+	const emailValue = email.value.trim();
+	const passwordValue = password.value.trim();
+	
+	if(usernameValue === '') {
+		setErrorFor(username, 'Firstname cannot be blank');
+	} else {
+		setSuccessFor(username);
+	}
+	if(lastnameValue === '') {
+		setErrorFor(lastname, 'Lastname cannot be blank');
+	} else {
+		setSuccessFor(lastname);
+	}
+	
+	if(emailValue === '') {
+		setErrorFor(email, 'Email cannot be blank');
+	} else if (!isEmail(emailValue)) {
+		setErrorFor(email, 'Not a valid email');
+	} else {
+		setSuccessFor(email);
+	}
+	
+	if(passwordValue === '') {
+		setErrorFor(password, 'Password cannot be blank');
+	} else {
+		setSuccessFor(password);
+	}
+}
+
+function setErrorFor(input, message) {
+	const formControl = input.parentElement;
+	const small = formControl.querySelector('small');
+	formControl.className = 'form-control error';
+	small.innerText = message;
+}
+
+function setSuccessFor(input) {
+	const formControl = input.parentElement;
+	formControl.className = 'form-control success';
+}
+	
+function isEmail(email) {
+	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+}
 
 
 
-// $().readyfunction{
-
-// }
-
-
-// $( "#form" ).rules( "add", {
-//   required: true,
-//   minlength: 2,
-//   messages: {
-//     required: "First name cannot be empty",
-//     minlength:"Please, at least {0} characters are necessary"
-//   }
-// });
-
-
-// $("#form").validate({
-//     rules:{
-//         name:{
-//             minlength: 2
-//         }
-//     },
-
-//     messages: {
-//     required: "First Name cannot be empty",
-//     minlength: "Please at least 2 characters are necessary"
-//   },
-
-//   submitHandler: function(form) {
-//     form.submit();
-//   }
-//  });
 
 
 
 
 
 
-// const form = document.getElementById('form');
-// const firstname = document.getElementById('firstname');
-// const lastname = document.getElementById('lastname');
-// const email = document.getElementById('email');
-// const password = document.getElementById('password');
 
-// form.addEventListener('submit', (e) => {
-//     e.preventDefault();
 
-//     checkInputs();
-// });
 
-// function checkInputs() {
-//     const firstnameValue = firstname.value.trim();
-//     const lastnameValue = lastname.value.trim();
-//     const emailValue = email.value.trim();
-//     const passwordValue = password.value.trim();
- 
-//     if(firstnameValue === '' ){
-//         setErrorFor(firstname);
-//     } 
-// }
 
-// function setErrorFor(input, message) {
-//     const formControl = input.parentElement;
-//     const small = formControl.querySelector('small');
+// SOCIAL PANEL JS
+const floating_btn = document.querySelector('.floating-btn');
+const close_btn = document.querySelector('.close-btn');
+const social_panel_container = document.querySelector('.social-panel-container');
 
-//     small.innerText = message; 
+floating_btn.addEventListener('click', () => {
+	social_panel_container.classList.toggle('visible')
+});
 
-//     formControl.classname = 'formcontrol error';
-// }
-
-// const setError = (element, message) => {
-//     const formControl = element.parentElement;
-//     const errorDisplay = formControl.querySelector('.error');
-
-//     errorDisplay.innerText = message;
-//     formControl.classList.add('error'); 
-// }
-
-// const validateInputs = () => {
-//     const firstname = firstname.value.trim();
-//     const lastname = lastname.value.trim();
-//     const email = email.value.trim();
-//     const password = password.value.trim();
-
-//     if(firstnameValue === ''){
-//         setError(firstname, 'First Name cannot be empty');
-//     }
-// };
-
-// // const setError = (element, message) => {
-// //     const formControl = element.parentElement;
-// //     const errorDisplay = formControl.querySelector('.error');
-
-// //     errorDisplay.innerText = message;
-// //     formControl.classList.add('error'); 
-// // }
-
-// // const validateInputs = () => {
-// //     const firstname = firstname.value.trim();
-// //     const lastname = lastname.value.trim();
-// //     const email = email.value.trim();
-// //     const password = password.value.trim();
-
-// //     if(firstnameValue === ''){
-// //         setError(firstname, 'First Name cannot be empty');
-// //     }
-// // };
+close_btn.addEventListener('click', () => {
+	social_panel_container.classList.remove('visible')
+});

@@ -20,7 +20,7 @@ body{
     width: 80%;
     margin: auto;
     display: flex;
-    padding-top: 1%;
+    padding-top: 4%;
 }
 
 .container div{
@@ -62,6 +62,7 @@ body{
     text-align: center;
     margin-bottom: 12px;
     color: white;
+    box-shadow: 0 2px 5px 4px;
 }
 
 form{
@@ -105,6 +106,7 @@ button{
     border: none;
     color: white;
     border-radius: 5px;
+
 }
 
 a{
@@ -117,53 +119,96 @@ a{
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-.form-control{
-    /* position: relative; */
+.form-control{    
     margin-bottom: 1rem !important;
     text-align: end;
+    position: relative;
 }
 
-.error{
+.form-control input:focus {
+    outline: 0;
+    border-color: rgb(128, 188, 247);
+    box-shadow: 0px 0px 1px 4px rgb(188, 219, 250);
+}
+
+.form-control.success input {
+    border-color: #2ecc71;
+}
+
+.form-control.error input {
+    border-color: #e74c3c;
+}
+
+.form-control i {
+    visibility: hidden;
+    position: absolute;
+    top: 40px;
+    right: 10px;
+}
+
+.form-control.success i.fa-check-circle {
+    color: #2ecc71;
+    visibility: visible;
+}
+
+.form-control.error i.fa-exclamation-circle {
+    color: #e74c3c;
+    visibility: visible;
+}
+
+.form-control small {
+    color: #e74c3c;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+
+/* .error{
     font-size: 12px;
     color: red;
     position: relative;
     top: -10px;
     left: 40px;
+}  */
 
-}
-
-/* .form-control img {
-    position: absolute;
-    top: 19px;
-    right: 25px;
-    visibility: hidden;
-}
-
-small {
-    color: red;
-    visibility: hidden;
-
-}
-
-.form-control.error {
-    margin-bottom: 10px !important;
-}
-
-.form-control.error small {
-    visibility: visible;
+.form-control.success input {
+    border-color: #2ecc71;
 }
 
 .form-control.error input {
     border-color: #e74c3c;
-    border-width: 2px;
 }
 
-.form-control.error img {
+.form-control i {
+    visibility: hidden;
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    font-size: 1.3rem;
+}
+
+.form-control.success i.fa-check-circle {
+    color: #2ecc71;
     visibility: visible;
-} */
+}
+
+.form-control.error i.fa-exclamation-circle {
+    color: #e74c3c;
+    visibility: visible;
+}
+
+.form-control small {
+    color: #e74c3c;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+}
 
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
     .container {
         flex-direction: column;
         width: 100%;
