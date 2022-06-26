@@ -4,7 +4,7 @@ const lastname = document.getElementById('lastname');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 
-form.addEventListener('claim your free trial', e => {
+form.addEventListener('submit', e => {
 	e.preventDefault();
 	
 	checkInputs();
@@ -18,18 +18,18 @@ function checkInputs() {
 	const passwordValue = password.value.trim();
 	
 	if(usernameValue === '') {
-		setErrorFor(username, 'Firstname cannot be blank');
+		setErrorFor(username, 'First Name cannot be empty');
 	} else {
 		setSuccessFor(username);
 	}
 	if(lastnameValue === '') {
-		setErrorFor(lastname, 'Lastname cannot be blank');
+		setErrorFor(lastname, 'Last Name cannot be empty');
 	} else {
 		setSuccessFor(lastname);
 	}
 	
 	if(emailValue === '') {
-		setErrorFor(email, 'Email cannot be blank');
+		setErrorFor(email, 'Looks like this is not an email');
 	} else if (!isEmail(emailValue)) {
 		setErrorFor(email, 'Not a valid email');
 	} else {
@@ -37,7 +37,7 @@ function checkInputs() {
 	}
 	
 	if(passwordValue === '') {
-		setErrorFor(password, 'Password cannot be blank');
+		setErrorFor(password, 'Password cannot be empty');
 	} else {
 		setSuccessFor(password);
 	}
