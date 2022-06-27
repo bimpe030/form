@@ -139,10 +139,6 @@ a{
     text-align: end;
 }
 
-.form-control.error button{
-    padding: 0.5rem 0 !important;
-}
-
 /* .form-control input:focus {
     outline: 0;
     border-color: rgb(128, 188, 247);
@@ -168,12 +164,12 @@ a{
     font-size: 0px;
 }
 
-.form-control i {
+/* .form-control i {
     visibility: hidden;
     position: absolute;
     top: 40px;
     right: 10px;
-}
+} */
 
 .form-control i {
     visibility: hidden;
@@ -181,11 +177,6 @@ a{
     top: 16px;
     right: 20px;
     font-size: 1.3rem;
-}
-
-.form-control.success i.fa-check-circle {
-    color: #2ecc71;
-    visibility: hidden !important;
 }
 
 .form-control.error i.fa-exclamation-circle {
@@ -239,5 +230,10 @@ a{
         background-image: url('../images/background.png');
         background-color: rgb(255, 122, 122);
         background-repeat: no-repeat;
+    }
+
+    .form-control.success i.fa-check-circle {
+            color: #2ecc71;
+            visibility: hidden !important;
     }
 }
