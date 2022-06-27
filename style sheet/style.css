@@ -185,7 +185,7 @@ a{
 
 .form-control.success i.fa-check-circle {
     color: #2ecc71;
-    visibility: visible;
+    visibility: hidden;
 }
 
 .form-control.error i.fa-exclamation-circle {
