@@ -30,6 +30,7 @@ function checkInputs() {
 	
 	if(emailValue === '') {
 		setErrorFor(email, 'Looks like this is not an email');
+		document.getElementById("email").placeholder = "email@example/com"
 	} else if (!isEmail(emailValue)) {
 		setErrorFor(email, 'Not a valid email');
 	} else {
