@@ -17,11 +17,11 @@ body{
 }
 
 .container{
-    width: 80%;
+    width: 83%;
     margin: auto;
     display: flex;
     padding-top: 2%;
-    gap: 1.5rem;
+    gap: 1.6rem;
 }
 
 .container div{
@@ -138,9 +138,9 @@ a{
     text-align: end;
 }
 
-.form-control input:focus{
+/* .form-control input:focus{
     border-width: 1px !important;
-}
+} */
 /* .form-control input:focus {
     outline: 0;
     border-color: rgb(128, 188, 247);
